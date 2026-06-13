@@ -13,7 +13,6 @@
 
 ## Demo
 
-> 📹 *Demo GIF coming — record with [LICEcap](https://www.cockos.com/licecap/) while the Docker stack is running: `docker compose up`, open `localhost:8501`, load customer **C_002**, click **Predict**, then **Explain**. Target: 15–20 seconds, 600px wide, under 5 MB. Save to `docs/demo.gif`.*
 
 ![Dashboard Demo](docs/demo.gif)
 
