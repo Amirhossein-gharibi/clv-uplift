@@ -1,0 +1,11 @@
+{
+  "customer_id": "C_002",
+  "cate_estimate": 0.14628,
+  "explanation_available": false,
+  "explanation_unavailable_reason": "SHAP surrogate fidelity R^2=0.8537 is below the required threshold of 0.90. Feature attributions withheld.",
+  "surrogate_r2": 0.85368,
+  "surrogate_r2_threshold": 0.9,
+  "top_features": [],
+  "baseline_cate": null,
+  "model_version": "0.1.0"
+}

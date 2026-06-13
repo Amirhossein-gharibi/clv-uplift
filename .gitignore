@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+*.pkl
+*.egg-info/
+dist/
+.pytest_cache/
+data/raw/
+artifacts/*.pkl
+artifacts/uplift_model.pkl
+!artifacts/figures/
+artifacts/figures/*.tmp

@@ -1,0 +1,47 @@
+[
+  {
+    "customer_id": "C_001",
+    "cate_estimate": 0.101474,
+    "cate_ci_lower": -0.11933,
+    "cate_ci_upper": 0.322278,
+    "targeting_certified": false,
+    "confidence": "not_certified",
+    "model_version": "0.1.0"
+  },
+  {
+    "customer_id": "C_002",
+    "cate_estimate": 0.14628,
+    "cate_ci_lower": 0.03357,
+    "cate_ci_upper": 0.25899,
+    "targeting_certified": false,
+    "confidence": "not_certified",
+    "model_version": "0.1.0"
+  },
+  {
+    "customer_id": "C_003",
+    "cate_estimate": 0.247484,
+    "cate_ci_lower": 0.092436,
+    "cate_ci_upper": 0.402533,
+    "targeting_certified": false,
+    "confidence": "not_certified",
+    "model_version": "0.1.0"
+  },
+  {
+    "customer_id": "C_004",
+    "cate_estimate": -0.097385,
+    "cate_ci_lower": -0.501322,
+    "cate_ci_upper": 0.306552,
+    "targeting_certified": false,
+    "confidence": "not_certified",
+    "model_version": "0.1.0"
+  },
+  {
+    "customer_id": "C_005",
+    "cate_estimate": 0.2416,
+    "cate_ci_lower": 0.057901,
+    "cate_ci_upper": 0.425299,
+    "targeting_certified": false,
+    "confidence": "not_certified",
+    "model_version": "0.1.0"
+  }
+]

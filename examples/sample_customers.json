@@ -1,0 +1,7 @@
+[
+    {"label": "C_001 - Champions (low CATE expected)", "customer_id": "C_001", "recency_days": 7, "frequency": 48, "monetary_value": 3240.50, "cancel_rate": 0.02, "clv_segment": "Champions"},
+    {"label": "C_002 - Loyal (persuadable middle)", "customer_id": "C_002", "recency_days": 22, "frequency": 19, "monetary_value": 920.00, "cancel_rate": 0.05, "clv_segment": "Loyal"},
+    {"label": "C_003 - At-Risk", "customer_id": "C_003", "recency_days": 85, "frequency": 12, "monetary_value": 640.00, "cancel_rate": 0.12, "clv_segment": "At-Risk"},
+    {"label": "C_004 - Lost (low CATE expected)", "customer_id": "C_004", "recency_days": 310, "frequency": 2, "monetary_value": 85.00, "cancel_rate": 0.33, "clv_segment": "Lost"},
+    {"label": "C_005 - Boundary case", "customer_id": "C_005", "recency_days": 60, "frequency": 9, "monetary_value": 520.00, "cancel_rate": 0.00, "clv_segment": "Loyal"}
+  ]

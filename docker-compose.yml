@@ -1,0 +1,53 @@
+# docker-compose.yml
+# Orchestrates the two services that make up the CLV Uplift application:
+# the FastAPI API backend and the Streamlit frontend UI.
+#
+# Run the full stack with:  docker compose up --build
+# Stop it with:             docker compose down
+
+version: "3.9"
+
+services:
+
+  api:
+    build:
+      context: .              # Docker build context is the project root
+      dockerfile: Dockerfile  # use the Dockerfile we just wrote
+      target: runtime         # build only up to the runtime stage, not builder
+    image: clv-uplift-api:latest
+    ports:
+      - "8000:8000"           # host_port:container_port
+                              # left side is your laptop; right side is inside Docker
+    env_file: .env            # load environment variables from your local .env file
+    volumes:
+      # Mount the local artifacts/ directory into the container read-only.
+      # This is how the trained model .pkl file gets into the container
+      # without being baked into the image itself.
+      # ro = read-only: the container can read models but cannot write new ones.
+      - ./artifacts:/app/artifacts:ro
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request, sys; r = urllib.request.urlopen('http://localhost:8000/health', timeout=3); sys.exit(0 if r.status == 200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped   # restart automatically if the container crashes,
+                              # but not if you stopped it deliberately
+
+  streamlit:
+    build:
+      context: streamlit_app/          # Streamlit has its own Dockerfile
+      dockerfile: Dockerfile.streamlit # we will write this in Chapter 8
+    image: clv-uplift-ui:latest
+    ports:
+      - "8501:8501"
+    environment:
+      # Inside the Docker network, services communicate using their SERVICE NAME
+      # as the hostname, not localhost. "api" here refers to the api service above.
+      # This is the most common Docker networking mistake for first-time users.
+      - API_URL=http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy  # wait for the API healthcheck to pass
+                                    # before starting Streamlit
+    restart: unless-stopped

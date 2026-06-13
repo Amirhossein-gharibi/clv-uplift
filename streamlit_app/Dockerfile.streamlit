@@ -1,0 +1,28 @@
+# streamlit_app/Dockerfile.streamlit
+# Build context is streamlit_app/ (see docker-compose.yml).
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Dependencies first for layer caching.
+COPY requirements.streamlit.txt .
+RUN pip install --no-cache-dir -r requirements.streamlit.txt
+
+COPY app.py .
+
+# Non-root, matching the API image's security posture.
+RUN useradd --no-create-home --uid 1001 appuser && chown -R appuser /app
+USER appuser
+
+ENV PYTHONUNBUFFERED=1
+# Streamlit writes a telemetry machine-id under $HOME; appuser has no home dir
+# (--no-create-home), so point its config/state at a writable /tmp path and turn
+# off usage stats (no outbound telemetry, no permission error).
+ENV HOME=/tmp
+ENV STREAMLIT_CONFIG_DIR=/tmp/.streamlit
+ENV STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+EXPOSE 8501
+
+CMD ["streamlit", "run", "app.py", \
+     "--server.port=8501", "--server.address=0.0.0.0", \
+     "--browser.gatherUsageStats=false"]
