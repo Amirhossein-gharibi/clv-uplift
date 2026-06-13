@@ -4,7 +4,7 @@
 # Data mounts in read-only; the trained artifact and figures mount out writable; the
 # training script mounts in read-only (it is not baked into the serving image).
 #
-# Prerequisite: `make build` (or `docker compose build api`) so clv-uplift-api:latest exists,
+# Prerequisite: `docker compose build api` so clv-uplift-api:latest exists,
 # and data/raw/online_retail_II.xlsx present on the host.
 set -euo pipefail
 
@@ -18,7 +18,7 @@ if [[ ! -f "$DATA_FILE" ]]; then
 fi
 
 if ! docker image inspect clv-uplift-api:latest >/dev/null 2>&1; then
-  echo "ERROR: image clv-uplift-api:latest not found. Run 'make build' first." >&2
+  echo "ERROR: image clv-uplift-api:latest not found. Run 'docker compose build api' first." >&2
   exit 1
 fi
 
@@ -31,6 +31,6 @@ docker run --rm \
   --volume "$ROOT/notebooks:/app/notebooks:ro" \
   --workdir /app \
   clv-uplift-api:latest \
-  python /app/notebooks/02_uplift_training.py
+  python /app/notebooks/01_uplift_training.py
 
 echo "Done. Artifact written to $ROOT/artifacts/uplift_model.pkl"

@@ -59,7 +59,7 @@ def get_bundle():
     if not MODEL_PATH.exists():
         raise RuntimeError(
             f"No trained bundle at {MODEL_PATH}. "
-            f"Run notebooks/02_uplift_training.py first to create it."
+            f"Run notebooks/01_uplift_training.py first to create it."
         )
     logger.info("Loading ServingBundle from %s ...", MODEL_PATH)
     with open(MODEL_PATH, "rb") as f:

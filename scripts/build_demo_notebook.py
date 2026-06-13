@@ -1,13 +1,13 @@
 # scripts/build_demo_notebook.py
 """
-Builds notebooks/03_demo.ipynb programmatically (nbformat) - reliable vs hand-writing
+Builds notebooks/02_demo.ipynb programmatically (nbformat) - reliable vs hand-writing
 notebook JSON. The notebook is BUNDLE-ONLY (no data file, no training): it loads the
 trained ServingBundle, runs live inference on the five example customers, and DISPLAYS
 the committed figures from artifacts/figures/ (it does NOT regenerate them).
 
 Usage (from project root, venv active):
     python scripts/build_demo_notebook.py
-    jupyter nbconvert --to notebook --execute --inplace notebooks/03_demo.ipynb
+    jupyter nbconvert --to notebook --execute --inplace notebooks/02_demo.ipynb
 
 The first command writes the notebook structure (no outputs). The second executes every
 cell and embeds the outputs, so GitHub renders the full narrative inline. If a cell errors
@@ -21,7 +21,7 @@ import nbformat
 from nbformat.v4 import new_notebook, new_markdown_cell, new_code_cell
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "notebooks" / "03_demo.ipynb"
+OUT = ROOT / "notebooks" / "02_demo.ipynb"
 
 
 def build():
@@ -245,7 +245,7 @@ def build():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     nbformat.write(nb, OUT)
     print(f"Wrote {OUT}  ({len(cells)} cells)")
-    print("Next: jupyter nbconvert --to notebook --execute --inplace notebooks/03_demo.ipynb")
+    print("Next: jupyter nbconvert --to notebook --execute --inplace notebooks/02_demo.ipynb")
 
 
 if __name__ == "__main__":

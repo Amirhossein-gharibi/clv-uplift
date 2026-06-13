@@ -27,7 +27,7 @@ async def lifespan(app: FastAPI):
         bundle_status = "bundle loaded"
     except RuntimeError:
         logger.warning("No model bundle found - /predict, /explain, /model-info will return "
-                       "503 until notebooks/02_uplift_training.py is run.")
+                       "503 until notebooks/01_uplift_training.py is run.")
         bundle_status = "no bundle (run training)"
     print(f"CLV Uplift Service v{__version__} started. DummyModel loaded; {bundle_status}.")
 

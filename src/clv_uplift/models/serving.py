@@ -4,7 +4,7 @@ ServingBundle - the minimal, pickle-stable contract between training and the API
 
 Deliberately separate from Phase 2.1's UpliftModelBundle (a rich in-memory TRAINING
 artifact). ServingBundle holds only what /predict and /explain need. The training script
-(notebooks/02_uplift_training.py) extracts these fields and pickles a ServingBundle to
+(notebooks/01_uplift_training.py) extracts these fields and pickles a ServingBundle to
 MODEL_PATH; the API's get_bundle() loads it.
 """
 from __future__ import annotations
@@ -61,7 +61,7 @@ def load_bundle(path: Optional[Path] = None) -> "ServingBundle":
     target = Path(path) if path is not None else MODEL_PATH
     if not target.exists():
         raise RuntimeError(
-            f"No bundle at {target}. Run notebooks/02_uplift_training.py first."
+            f"No bundle at {target}. Run notebooks/01_uplift_training.py first."
         )
     with open(target, "rb") as f:
         return pickle.load(f)

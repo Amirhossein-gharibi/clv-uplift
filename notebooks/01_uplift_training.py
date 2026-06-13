@@ -1,4 +1,4 @@
-# notebooks/02_uplift_training.py
+# notebooks/01_uplift_training.py
 # %% [markdown]
 # # Phase 2 training + persistence
 # Runs the full causal pipeline once and pickles a ServingBundle (including the fitted

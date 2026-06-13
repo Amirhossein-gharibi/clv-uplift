@@ -17,7 +17,7 @@
 
 ![Dashboard Demo](docs/demo.gif)
 
-📓 [**View the pre-run demo notebook**](notebooks/03_demo.ipynb) — fully rendered, no setup required.
+📓 [**View the pre-run demo notebook**](notebooks/02_demo.ipynb) — fully rendered, no setup required.
 
 ---
 
@@ -138,7 +138,7 @@ python -m venv .venv
 pip install -e ".[dev]"
 
 # Train (requires data/raw/online_retail_II.xlsx)
-python notebooks/02_uplift_training.py
+python notebooks/01_uplift_training.py
 
 # Serve
 uvicorn clv_uplift.api.main:app --reload
@@ -212,7 +212,7 @@ clv-uplift/
 │       └── routers/              # health, predict, explain, info
 ├── streamlit_app/                # dashboard + its Dockerfile
 ├── scripts/                      # train_in_docker, generate_examples, run_demo, build_demo_notebook
-├── notebooks/                    # 02_uplift_training.py, 03_demo.ipynb
+├── notebooks/                    # 01_uplift_training.py, 02_demo.ipynb
 ├── examples/                     # sample_customers.json + sample API responses
 ├── artifacts/figures/            # committed diagnostic figures
 ├── tests/test_api.py             # 7 contract tests
