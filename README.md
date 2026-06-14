@@ -92,11 +92,11 @@ The four estimators landing in a tight +0.10–0.12 band, well below the naive +
 
 The project reports findings at the confidence level the evidence actually supports not all-or-nothing.
 
-**Tier 1 — Structural validity: CONFIRMED.** The causal claim survives all four DoWhy refuters. The placebo-treatment test (the hard gate) returns an effect near zero, confirming the pipeline does not manufacture an effect from noise; random-common-cause, data-subset, and bootstrap refuters all report stable estimates.
+**Tier 1: Structural validity: CONFIRMED.** The causal claim survives all four DoWhy refuters. The placebo-treatment test (the hard gate) returns an effect near zero, confirming the pipeline does not manufacture an effect from noise; random-common-cause, data-subset, and bootstrap refuters all report stable estimates.
 
-**Tier 2 — Average effect: REAL AND ROBUST.** The ATE of +0.105 is consistent across five estimators and carries a point **E-value of 1.84**: an unmeasured confounder would need a risk ratio of at least 1.84 with both treatment and outcome to explain it away. The direction and magnitude are sound.
+**Tier 2: Average effect: REAL AND ROBUST.** The ATE of +0.105 is consistent across five estimators and carries a point **E-value of 1.84**: an unmeasured confounder would need a risk ratio of at least 1.84 with both treatment and outcome to explain it away. The direction and magnitude are sound.
 
-**Tier 3 — Individual heterogeneity: NOT CONFIRMED (the headline finding).** The RATE/AUTOC test for whether the model's CATE ranking captures *real* heterogeneity could not reject the null at 95%. So:
+**Tier 3: Individual heterogeneity: NOT CONFIRMED (the headline finding).** The RATE/AUTOC test for whether the model's CATE ranking captures *real* heterogeneity could not reject the null at 95%. So:
 
 > **The average treatment effect is real and robust (Tier 2, E-value 1.84). Individual-level heterogeneity was not statistically confirmed (Tier 3, RATE null). The pipeline correctly withheld the targeting policy and the SHAP attributions rather than act on unconfirmed signal. This discipline, knowing the difference between "an effect exists" and "I can target it", is the project's primary methodological contribution.**
 
