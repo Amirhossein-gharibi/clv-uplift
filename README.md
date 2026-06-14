@@ -13,7 +13,9 @@
 
 ## Demo
 
-**🚀 [Try the live demo on Streamlit >>](https://amirhossein07-clv-uplift.hf.space)**
+**🚀 [Try the live demo on Hugging Face »](https://amirhossein07-clv-uplift.hf.space)**
+
+Live app: https://amirhossein07-clv-uplift.hf.space
 
 ![Dashboard Demo](docs/demo.gif)
 
