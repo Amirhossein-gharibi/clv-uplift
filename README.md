@@ -13,7 +13,7 @@
 
 ## Demo
 
-**🚀 [Try the live demo on Hugging Face Spaces »](https://huggingface.co/spaces/Amirhossein07/clv-uplift)**
+**🚀 [Try the live demo on](https://amirhossein07-clv-uplift.hf.space)**
 
 ![Dashboard Demo](docs/demo.gif)
 
