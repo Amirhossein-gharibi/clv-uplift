@@ -13,7 +13,7 @@
 
 ## Demo
 
-**🚀 [Try the live demo on](https://amirhossein07-clv-uplift.hf.space)**
+**🚀 [Try the live demo on Streamlit >>](https://amirhossein07-clv-uplift.hf.space)**
 
 ![Dashboard Demo](docs/demo.gif)
 
